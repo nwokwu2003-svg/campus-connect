@@ -1,0 +1,34 @@
+sync means that each statement will be executed line by line in other in which they have been written
+async means a none blocking code because it does not block the execution of rest of the code.
+utilities files contain reuseable function.
+server file is responsible for starting the project.
+database configuration: this part is responsible for the connection between the app and mongoDB.
+JIO: it checks wether the submitted data follows the required rules
+
+MODEL: defines the structure of the information stored in the database
+
+ROUTER: define the address through which the client communicate with the backend.
+CONTROLLER: it contain the main instruction for processing requests
+
+MIDDLEWARE: it is a code that run between receiving the request and completing the response.
+-checking login token
+-restricting access according to the user roles
+-validating incoming information
+-handling error
+-checking certain router parameters
+
+
+HOW USER REGISTRATION WORKS
+
+-The student submits their name, email and password
+-The registration route directs the request the registration controller after validation
+-The controller create the user through the user model
+The password is hashed before the user record is saved
+-MongoDB store the new user record
+-The API return a success response and a JWT for subsequent authenticated request
+
+COMPLAINT
+this is the part of the CampusConnect where a student can lay a complain and it will be view by the support office or administration before giving response to the student through vai email or otherwise.
+
+HOW THE ADMINISTRATION DASHBOARD WORKS 
+-The administration dashboard uses data received from the database to show summary information.
